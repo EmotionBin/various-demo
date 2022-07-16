@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #videoElement{
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <video id="videoElement"></video>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flv.js@1.6.2/dist/flv.min.js"></script>
+<script>
+  if (flvjs.isSupported()) {
+    var videoElement = document.getElementById('videoElement');
+    var flvPlayer = flvjs.createPlayer({
+      type: 'flv',
+      url: 'https://stream-kunming-cu-14-204-34-114.edgesrv.com:443/live/4269625rsWbvi43Q_4000.flv?wsAuth=d9c701a83cbe63a99e1c8211aa79cae0&token=web-h5-418679642-4269625-1d41ce6673d697af7b008ef51f83cc4a849025ba024d5cfa&logo=0&expire=0&did=b1a0dd1a6345a47ea052131800091601&ver=Douyu_222071505&pt=2&st=0&vhost=play3&origin=tct&mix=0&isp=scdncuyunkmidc'
+    });
+    flvPlayer.attachMediaElement(videoElement);
+    flvPlayer.load();
+    flvPlayer.play();
+  }
+</script>
+</html>
